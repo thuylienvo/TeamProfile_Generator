@@ -9,13 +9,6 @@ test('Creates a new Manager object', () => {
     expect(testNewManager.officeNumber).toEqual(expect.any(Number));
 });
 
-test('officeNumber() returns office number', () => {
-    const testInputEl= 1234;
-    const testNewManager = new Manager("Mimi", 1234, "mimzy414@gmail.com", testInputEl);
-    console.log(testInputEl);
-    expect(testNewManager.getOfficeNumber()).toBe(testInputEl);
-});
-
 test('\'Manager\' is returned when getRole() is called', () => {
     const testInputEl = 'Manager';
     const testNewManager = new Manager("Mimi", 1234, "mimzy414@gmail.com", testInputEl);
