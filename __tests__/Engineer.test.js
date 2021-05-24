@@ -9,15 +9,17 @@ const Engineer = require('../lib/Engineer');
 // });
 
 test('Retrieve GitHub via getGitHub()', () => {
-    const gitHub = 'thuylienvo';
-    const testNewEngineer = new Engineer("Mimi", 1234, "mimzy414@gmail.com", gitHub);
-
-    expect(testNewEngineer.getGitHub()).toBe(gitHub);
+    const testInputEl = 'thuylienvo';
+    const testNewEngineer = new Engineer("Mimi", 1234, "mimzy414@gmail.com", testInputEl);
+    console.log(testInputEl);
+    
+    expect(testNewEngineer.getGitHub()).toBe(testInputEl);
 });   
 
 test('\'Engineer\' is returned when getRole() is called', () => {
-    const testRole = 'Engineer';
-    const testNewEngineer = new Engineer("Mimi", 1234, "mimzy414@gmail.com", testRole);
+    const testInputEl = 'Engineer';
+    const testNewEngineer = new Engineer("Mimi", 1234, "mimzy414@gmail.com", testInputEl);
+    console.log(testInputEl);
 
-    expect(testNewEngineer.getRole()).toBe(testRole);
+    expect(testNewEngineer.getRole()).toBe(testInputEl);
 });   
