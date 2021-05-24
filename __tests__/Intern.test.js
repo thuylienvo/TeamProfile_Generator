@@ -1,5 +1,14 @@
 const Intern = require('../lib/Intern');
 
+test('Creates a new intern object', () => {
+    const testNewIntern = new Intern('Mimi', 1234, 'mimzy414@gmail.com', 'UT of Austin');
+
+    expect(testNewIntern.name).toEqual(expect.any(String));
+    expect(testNewIntern.email).toEqual(expect.any(String));
+    expect(testNewIntern.id).toEqual(expect.any(Number));
+    expect(testNewIntern.school).toEqual(expect.any(String));
+});
+
 test('\'Intern\' is returned when getRole() is called', () => {
     const testInputEl = 'Intern';
     const testNewIntern = new Intern("Mimi", 1234, "mimzy414@gmail.com", testInputEl);
