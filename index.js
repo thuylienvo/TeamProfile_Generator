@@ -16,15 +16,17 @@ const Manager = require('./lib/Manager')
     function initApp() {
         inquirer.prompt([
             {
-                type: "input",
-                message: "Hello fellow coder! Ready to put together your team profile?",
-            } 
+                type: 'confirm',
+                name: 'start',
+                message: 'Hello fellow coder! Ready to put together your team profile??',
+                default: false
+            }
         ]) 
-            addManager();
-        };
+    };
+        getManager();
 
     // GET MANAGER DATA FUNCTION
-    function addManager() {
+    function getManager() {
         inquirer.prompt([
             {
                 type: "input",
@@ -43,7 +45,7 @@ const Manager = require('./lib/Manager')
             },
         ])
 
-            addTeamMembers();
+            // addTeamMembers();
     }
         
 
