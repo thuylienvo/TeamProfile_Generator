@@ -64,17 +64,41 @@ const teamMembers = [];
             {
                 type: 'input',
                 message: 'Enter manager ID:',
-                name:'id'
+                name:'id',
+                validate: idInput => {
+                    if (idInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter an id.');
+                      return false;
+                    }
+                  }
             },
             {
                 type: 'input',
                 message: 'Please manager\'s email.',
-                name: "email"
+                name: "email",
+                validate: emailInput => {
+                    if (emailInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter a valid email.');
+                      return false;
+                    }
+                  }
             },
             {
                 type: 'input',
                 message: 'Please enter manager\'s office number.',
-                name: 'officeNumber'
+                name: 'officeNumber',
+                validate: officeNumberInput => {
+                    if (officeNumberInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter an office number.');
+                      return false;
+                    }
+                 }
             }
         ])
             .then((employeeInfo) => {
@@ -145,17 +169,41 @@ const teamMembers = [];
             {
                 type: 'input',
                 message: 'Please enter engineer\'s ID:',
-                name:'id'
+                name:'id',
+                validate: idInput => {
+                    if (idInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter an id.');
+                      return false;
+                    }
+                  }
             },
             {
                 type: 'input',
                 message: 'Please enter engineer\'s email.',
-                name: "email"
+                name: "email",
+                validate: emailInput => {
+                    if (emailInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter a valid email.');
+                      return false;
+                    }
+                  }
             },
             {
                 type: 'input',
                 message: 'Please enter engineer\'s gitHub.',
-                name: 'gitHub'
+                name: 'gitHub',
+                validate: gitHubInput => {
+                    if (gitHubInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter a gitHub.');
+                      return false;
+                    }
+                  }
             }
         ])
             .then((employeeInfo) => {
@@ -165,56 +213,72 @@ const teamMembers = [];
                     employeeInfo.email, 
                     employeeInfo.gitHub
                 );
-                this.manager.push(addEngineer);
+                teamMember.push(addEngineer);
                     // console.log(addEngin)
                 addNewEmployee();
             });
     };
 
     // ADD INTERN
-    // function getIntern() {
-    //     inquirer.prompt([
-    //         {
-    //             type: 'input',
-    //             message: 'What is the manager\'s name?',
-    //             name: 'name',
-    //             validate: nameInput => {
-    //                 if (nameInput) {
-    //                   return true;
-    //                 } else {
-    //                   console.log('Please enter manager\'s name!');
-    //                   return false;
-    //                 }
-    //               }
-    //         },
-    //         {
-    //             type: 'input',
-    //             message: 'Enter manager ID:',
-    //             name:'id'
-    //         },
-    //         {
-    //             type: 'input',
-    //             message: 'Please manager\'s email.',
-    //             name: "email"
-    //         },
-    //         {
-    //             type: 'input',
-    //             message: 'Please enter manager\'s office number.',
-    //             name: 'officeNumber'
-    //         }
-    //     ])
-    //         .then((employeeInfo) => {
-    //             const addManager = new Manager(
-    //                 employeeInfo.name, 
-    //                 employeeInfo.id, 
-    //                 employeeInfo.email, 
-    //                 employeeInfo.officeNumber
-    //             );
-    //             this.manager.push(addManager);
-    //                 // console.log(addManager)
-    //             addNewEmployee();
-    //         });
-    // };
+    function getIntern() {
+        inquirer.prompt([
+            {
+                type: 'input',
+                message: 'What is the intern\'s name?',
+                name: 'name',
+                validate: nameInput => {
+                    if (nameInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter a name!');
+                      return false;
+                    }
+                  }
+            },
+            {
+                type: 'input',
+                message: 'Enter manager ID:',
+                name:'id',
+                validate: idInput => {
+                    if (idInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter an id.');
+                      return false;
+                    }
+                  }
+            },
+            {
+                type: 'input',
+                message: 'Please manager\'s email.',
+                name: "email",
+                validate: emailInput => {
+                    if (emailInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter a valid email.');
+                      return false;
+                    }
+                  }
+            },
+            {
+                type: 'input',
+                message: 'Please enter school name.',
+                name: 'school'
+            }
+        ])
+            .then((employeeInfo) => {
+                const addIntern = new Intern(
+                    employeeInfo.name, 
+                    employeeInfo.id, 
+                    employeeInfo.email, 
+                    employeeInfo.school
+                );
+                teamMember.push(addIntern);
+                    // console.log(addIntern)
+                addNewEmployee();
+            });
+    };
 
 
  //CREATE HTML FUNCTION WITH ALL TEAM MEMBERS
