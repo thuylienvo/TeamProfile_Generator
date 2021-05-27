@@ -9,63 +9,40 @@ const Manager = require('./lib/Manager');
 
 const teamMembers = [];
 
-// APPLICATION FUNCTION
+// START APPLICATION FUNCTION
 
-    // Start of gathering teammember info
     function initApp() {
         inquirer.prompt([
             {
                 type: 'confirm',
                 name: 'start',
                 message: 'Hello fellow coder! Ready to put together your team profile??',
-                validate: answer => {
-                    if (answer) {
-                        addTeammate()
-                    } else {
-                        console.log('Goodbye')
-                        return false;
-                    }
-                } 
             },
             {
                 type: 'list',
                 message: 'Select an employee role from the list below:',
-                choices: ['Manager', 'Engineer', 'Intern', 'Profile compete. No more team members to add!'],
+                choices: ['Manager', 'Engineer', 'Intern'],
                 name: 'role'
-            },
-            {
-                type:'input',
-                message: 'Enter the employee name',
-                name: 'name'
-            },
-            {
-                type: 'input',
-                message: 'Enter the employee ID',
-                name:'id'
-            },
-            {
-                type: 'input',
-                message: 'Please enter the employee email address',
-                name: 'email'
             },
 
         ])
-        .then ((employeeInfo) => {
+                .then ((employeeInfo) => {
             if(employeeInfo.role === 'Manager') {
-                console.log('Add Manager');
+                console.log('Add Manager information');
                 getManager()
 
             } else if (employeeInfo.role  === 'Engineer') {
-                console.log('Add Engineer');
-            } else if (employeeInfo.role  === 'Intern') {
+                console.log('Add Engineer information');
+                getEngineer()
+                
+            } else if (employeeInfo.role  === 'Intern ') {
                 console.log('Add Intern');
+                getIntern()
 
-            } else (employeeInfo.role  === 'Profile compete. No more team members to add!')
-
+            } else (employeeInfo.role === '') 
         });
     };
 
-    //GET TEAM MEMBER DATA FUNCTION
  
 
     // GET MANAGER DATA FUNCTION
@@ -73,48 +50,171 @@ const teamMembers = [];
         inquirer.prompt([
             {
                 type: 'input',
-                message: 'What is your team manager\'s name?',
+                message: 'What is the manager\'s name?',
                 name: 'name',
                 validate: nameInput => {
                     if (nameInput) {
                       return true;
                     } else {
-                      console.log('Please enter your manager\'s name!');
+                      console.log('Please enter manager\'s name!');
                       return false;
                     }
                   }
             },
             {
                 type: 'input',
-                message: "Please enter your team manager's email.",
+                message: 'Enter manager ID:',
+                name:'id'
+            },
+            {
+                type: 'input',
+                message: 'Please manager\'s email.',
                 name: "email"
             },
             {
                 type: 'input',
-                message: 'Please enter your team manager\'s office number?',
+                message: 'Please enter manager\'s office number.',
                 name: 'officeNumber'
             }
         ])
-            .then(empInfo => {
+            .then((employeeInfo) => {
                 const addManager = new Manager(
-                    empInfo.name, 
-                    empInfo.id, 
-                    empInfo.email, 
-                    empInfo.officeNumber
+                    employeeInfo.name, 
+                    employeeInfo.id, 
+                    employeeInfo.email, 
+                    employeeInfo.officeNumber
                 );
-                this.manager.push(addManager);
+                teamMember.push(addManager);
                     // console.log(addManager)
                 addNewEmployee();
             });
     };
 
     //GET TEAM MEMBER DATA FUNCTION
+    function addNewEmployee() {
+        inquirer.prompt([
+            {
+                type: 'list',
+                message: 'Would you like to add more team members?',
+                choices: ['Engineer', 'Intern', 'Profile complete. No more team members to add!'],
+                name: 'role'
+            },
+            {
+                type: 'list',
+                message: 'Select an employee role from the list below:',
+                choices: ['Manager', 'Engineer', 'Intern', 'Profile complete. No more team members to add!'],
+                name: 'role'
+            },
+
+        ])
+        .then ((employeeInfo) => {
+            if(employeeInfo.role === 'Manager') {
+                console.log('Add Manager information');
+                getManager()
+
+            } else if (employeeInfo.role  === 'Engineer') {
+                console.log('Add Engineer information');
+                getEngineer()
+                
+            } else if (employeeInfo.role  === 'Intern ') {
+                console.log('Add Intern');
+                getIntern()
+
+            } else (employeeInfo.role === 'Profile compete. No more team members to add!') 
+        });
+    };
+
 
 
     // ADD ENGINEER 
+    function getEngineer() {
+        inquirer.prompt([
+            {
+                type: 'input',
+                message: 'Please enter engineer name.',
+                name: 'name',
+                validate: nameInput => {
+                    if (nameInput) {
+                      return true;
+                    } else {
+                      console.log('Must enter engineer\'s name!');
+                      return false;
+                    }
+                  }
+            },
+            {
+                type: 'input',
+                message: 'Please enter engineer\'s ID:',
+                name:'id'
+            },
+            {
+                type: 'input',
+                message: 'Please enter engineer\'s email.',
+                name: "email"
+            },
+            {
+                type: 'input',
+                message: 'Please enter engineer\'s gitHub.',
+                name: 'gitHub'
+            }
+        ])
+            .then((employeeInfo) => {
+                const addEngineer = new Engineer(
+                    employeeInfo.name, 
+                    employeeInfo.id, 
+                    employeeInfo.email, 
+                    employeeInfo.gitHub
+                );
+                this.manager.push(addEngineer);
+                    // console.log(addEngin)
+                addNewEmployee();
+            });
+    };
 
     // ADD INTERN
-
+    // function getIntern() {
+    //     inquirer.prompt([
+    //         {
+    //             type: 'input',
+    //             message: 'What is the manager\'s name?',
+    //             name: 'name',
+    //             validate: nameInput => {
+    //                 if (nameInput) {
+    //                   return true;
+    //                 } else {
+    //                   console.log('Please enter manager\'s name!');
+    //                   return false;
+    //                 }
+    //               }
+    //         },
+    //         {
+    //             type: 'input',
+    //             message: 'Enter manager ID:',
+    //             name:'id'
+    //         },
+    //         {
+    //             type: 'input',
+    //             message: 'Please manager\'s email.',
+    //             name: "email"
+    //         },
+    //         {
+    //             type: 'input',
+    //             message: 'Please enter manager\'s office number.',
+    //             name: 'officeNumber'
+    //         }
+    //     ])
+    //         .then((employeeInfo) => {
+    //             const addManager = new Manager(
+    //                 employeeInfo.name, 
+    //                 employeeInfo.id, 
+    //                 employeeInfo.email, 
+    //                 employeeInfo.officeNumber
+    //             );
+    //             this.manager.push(addManager);
+    //                 // console.log(addManager)
+    //             addNewEmployee();
+    //         });
+    // };
 
 
  //CREATE HTML FUNCTION WITH ALL TEAM MEMBERS
