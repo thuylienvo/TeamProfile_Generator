@@ -56,7 +56,7 @@ const teamMembers = [];
                     if (nameInput) {
                       return true;
                     } else {
-                      console.log('Please enter manager\'s name!');
+                      console.log('Please enter manager\'s name.');
                       return false;
                     }
                   }
@@ -76,7 +76,7 @@ const teamMembers = [];
             },
             {
                 type: 'input',
-                message: 'Please manager\'s email.',
+                message: 'Please enter manager\'s email.',
                 name: "email",
                 validate: emailInput => {
                     if (emailInput) {
@@ -155,7 +155,7 @@ const teamMembers = [];
         inquirer.prompt([
             {
                 type: 'input',
-                message: 'Please enter engineer name.',
+                message: 'Please enter engineer\'s name.',
                 name: 'name',
                 validate: nameInput => {
                     if (nameInput) {
@@ -194,13 +194,13 @@ const teamMembers = [];
             },
             {
                 type: 'input',
-                message: 'Please enter engineer\'s gitHub.',
+                message: 'Please enter engineer\'s GitHub username.',
                 name: 'gitHub',
                 validate: gitHubInput => {
                     if (gitHubInput) {
                       return true;
                     } else {
-                      console.log('Please enter a gitHub.');
+                      console.log('Please enter a GitHub username.');
                       return false;
                     }
                   }
