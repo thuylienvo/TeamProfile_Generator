@@ -2,7 +2,7 @@
 
 ## Description
 
-  When creating a project/application, it is important to have a high-quality README file. This means it will include the what, where, why and how of your project. 
+  When creating a project/application, it is important to have a high-quality team profile. This means it will include the what, where, why and how of your project. 
 
   * What is the app for   
   * Why was it created   
@@ -12,9 +12,9 @@
 
   This is a command-line application that runs on `Node.js` and dynamically creates a professional team file from the data the user inputs. 
 
-  ![teamprofile-demoGif](TBD)
+  [teamprofile-demoGif](TBD)
 
-   See the full demonstation here: [README Full Video](TBD)
+   See the full demonstation here: [TEAM PROFILE Full Video](TBD)
 
   ## Table of Contents
 
