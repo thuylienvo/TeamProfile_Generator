@@ -14,13 +14,52 @@ const teamMembers = [];
     function initApp() {
         inquirer.prompt([
             {
-                type: 'confirm',
+                // type: 'confirm',
                 name: 'start',
-                message: 'Hello fellow coder! Ready to put together your team profile??',
+                message: 'Hello fellow coder! Let\'s get to creating a team profile.',
+            },
+            {
+                type: 'input',
+                message: 'Please enter the team member\'s name?',
+                name: 'name',
+                validate: nameInput => {
+                    if (nameInput) {
+                      return true;
+                    } else {
+                      console.log('You must enter a name.');
+                      return false;
+                    }
+                  }
+            },
+            {
+                type: 'input',
+                message: 'Please enter the team member\'s ID:',
+                name:'id',
+                validate: idInput => {
+                    if (idInput) {
+                      return true;
+                    } else {
+                      console.log('You must enter an id.');
+                      return false;
+                    }
+                  }
+            },
+            {
+                type: 'input',
+                message: 'Please enter the team member\'s email.',
+                name: "email",
+                validate: emailInput => {
+                    if (emailInput) {
+                      return true;
+                    } else {
+                      console.log('You must enter a valid email.');
+                      return false;
+                    }
+                  }
             },
             {
                 type: 'list',
-                message: 'Select an employee role from the list below:',
+                message: 'Select an team member role from the list below:',
                 choices: ['Manager', 'Engineer', 'Intern'],
                 name: 'role'
             },
@@ -48,45 +87,45 @@ const teamMembers = [];
     // GET MANAGER DATA FUNCTION
     function getManager() {
         inquirer.prompt([
-            {
-                type: 'input',
-                message: 'What is the manager\'s name?',
-                name: 'name',
-                validate: nameInput => {
-                    if (nameInput) {
-                      return true;
-                    } else {
-                      console.log('Please enter manager\'s name.');
-                      return false;
-                    }
-                  }
-            },
-            {
-                type: 'input',
-                message: 'Enter manager ID:',
-                name:'id',
-                validate: idInput => {
-                    if (idInput) {
-                      return true;
-                    } else {
-                      console.log('Please enter an id.');
-                      return false;
-                    }
-                  }
-            },
-            {
-                type: 'input',
-                message: 'Please enter manager\'s email.',
-                name: "email",
-                validate: emailInput => {
-                    if (emailInput) {
-                      return true;
-                    } else {
-                      console.log('Please enter a valid email.');
-                      return false;
-                    }
-                  }
-            },
+            // {
+            //     type: 'input',
+            //     message: 'What is the manager\'s name?',
+            //     name: 'name',
+            //     validate: nameInput => {
+            //         if (nameInput) {
+            //           return true;
+            //         } else {
+            //           console.log('Please enter manager\'s name.');
+            //           return false;
+            //         }
+            //       }
+            // },
+            // {
+            //     type: 'input',
+            //     message: 'Enter manager ID:',
+            //     name:'id',
+            //     validate: idInput => {
+            //         if (idInput) {
+            //           return true;
+            //         } else {
+            //           console.log('Please enter an id.');
+            //           return false;
+            //         }
+            //       }
+            // },
+            // {
+            //     type: 'input',
+            //     message: 'Please enter manager\'s email.',
+            //     name: "email",
+            //     validate: emailInput => {
+            //         if (emailInput) {
+            //           return true;
+            //         } else {
+            //           console.log('Please enter a valid email.');
+            //           return false;
+            //         }
+            //       }
+            // },
             {
                 type: 'input',
                 message: 'Please enter manager\'s office number.',
@@ -153,45 +192,45 @@ const teamMembers = [];
     // ADD ENGINEER 
     function getEngineer() {
         inquirer.prompt([
-            {
-                type: 'input',
-                message: 'Please enter engineer\'s name.',
-                name: 'name',
-                validate: nameInput => {
-                    if (nameInput) {
-                      return true;
-                    } else {
-                      console.log('Must enter engineer\'s name!');
-                      return false;
-                    }
-                  }
-            },
-            {
-                type: 'input',
-                message: 'Please enter engineer\'s ID:',
-                name:'id',
-                validate: idInput => {
-                    if (idInput) {
-                      return true;
-                    } else {
-                      console.log('Please enter an id.');
-                      return false;
-                    }
-                  }
-            },
-            {
-                type: 'input',
-                message: 'Please enter engineer\'s email.',
-                name: "email",
-                validate: emailInput => {
-                    if (emailInput) {
-                      return true;
-                    } else {
-                      console.log('Please enter a valid email.');
-                      return false;
-                    }
-                  }
-            },
+            // {
+            //     type: 'input',
+            //     message: 'Please enter engineer\'s name.',
+            //     name: 'name',
+            //     validate: nameInput => {
+            //         if (nameInput) {
+            //           return true;
+            //         } else {
+            //           console.log('Must enter engineer\'s name!');
+            //           return false;
+            //         }
+            //       }
+            // },
+            // {
+            //     type: 'input',
+            //     message: 'Please enter engineer\'s ID:',
+            //     name:'id',
+            //     validate: idInput => {
+            //         if (idInput) {
+            //           return true;
+            //         } else {
+            //           console.log('Please enter an id.');
+            //           return false;
+            //         }
+            //       }
+            // },
+            // {
+            //     type: 'input',
+            //     message: 'Please enter engineer\'s email.',
+            //     name: "email",
+            //     validate: emailInput => {
+            //         if (emailInput) {
+            //           return true;
+            //         } else {
+            //           console.log('Please enter a valid email.');
+            //           return false;
+            //         }
+            //       }
+            // },
             {
                 type: 'input',
                 message: 'Please enter engineer\'s GitHub username.',
@@ -222,45 +261,45 @@ const teamMembers = [];
     // ADD INTERN
     function getIntern() {
         inquirer.prompt([
-            {
-                type: 'input',
-                message: 'What is the intern\'s name?',
-                name: 'name',
-                validate: nameInput => {
-                    if (nameInput) {
-                      return true;
-                    } else {
-                      console.log('Please enter a name!');
-                      return false;
-                    }
-                  }
-            },
-            {
-                type: 'input',
-                message: 'Enter intern ID:',
-                name:'id',
-                validate: idInput => {
-                    if (idInput) {
-                      return true;
-                    } else {
-                      console.log('Please enter an id.');
-                      return false;
-                    }
-                  }
-            },
-            {
-                type: 'input',
-                message: 'Please enter intern\'s email.',
-                name: "email",
-                validate: emailInput => {
-                    if (emailInput) {
-                      return true;
-                    } else {
-                      console.log('Please enter a valid email.');
-                      return false;
-                    }
-                  }
-            },
+            // {
+            //     type: 'input',
+            //     message: 'What is the intern\'s name?',
+            //     name: 'name',
+            //     validate: nameInput => {
+            //         if (nameInput) {
+            //           return true;
+            //         } else {
+            //           console.log('Please enter a name!');
+            //           return false;
+            //         }
+            //       }
+            // },
+            // {
+            //     type: 'input',
+            //     message: 'Enter intern ID:',
+            //     name:'id',
+            //     validate: idInput => {
+            //         if (idInput) {
+            //           return true;
+            //         } else {
+            //           console.log('Please enter an id.');
+            //           return false;
+            //         }
+            //       }
+            // },
+            // {
+            //     type: 'input',
+            //     message: 'Please enter intern\'s email.',
+            //     name: "email",
+            //     validate: emailInput => {
+            //         if (emailInput) {
+            //           return true;
+            //         } else {
+            //           console.log('Please enter a valid email.');
+            //           return false;
+            //         }
+            //       }
+            // },
             {
                 type: 'input',
                 message: 'Please enter school name.',
