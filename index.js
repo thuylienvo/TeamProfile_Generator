@@ -237,7 +237,7 @@ const teamMembers = [];
             },
             {
                 type: 'input',
-                message: 'Enter manager ID:',
+                message: 'Enter intern ID:',
                 name:'id',
                 validate: idInput => {
                     if (idInput) {
@@ -250,7 +250,7 @@ const teamMembers = [];
             },
             {
                 type: 'input',
-                message: 'Please manager\'s email.',
+                message: 'Please enter intern\'s email.',
                 name: "email",
                 validate: emailInput => {
                     if (emailInput) {
@@ -292,7 +292,7 @@ const teamMembers = [];
             <!-- Manager -->
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-                    <div class="card-body">
+                    <div class="card-body bg-light text-dark">
                         <h5 class="card-title">${employee.name}</h5>
                         <i class="fas fa-mug-hot"></i>
                         <h6 class="card-text">Manager</h6>
@@ -311,7 +311,7 @@ const teamMembers = [];
             return `<!-- Engineer -->
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-                    <div class="card-body">
+                    <div class="card-body bg-light text-dark">
                         <h5 class="card-title">${employee.name}</h5>
                         <i class="fas fa-glasses"></i>
                         <h6 class="card-text">Engineer</h6>
@@ -330,7 +330,7 @@ const teamMembers = [];
             return `<!-- Intern -->
             <div class="col-4">
             <div class="card" style="width: 18rem;">
-                <div class="card-body">
+                <div class="card-body bg-light text-dark">
                     <h5 class="card-title">${employee.name}</h5>
                     <i class="fas fa-user-graduate"></i>
                     <h6 class="card-text">Intern</h6>
@@ -340,7 +340,8 @@ const teamMembers = [];
                     <li class="list-group-item">Email:<a href="mailto:${employee.email}">${employee.email}</a></li>
                     <li class="list-group-item">School: ${employee.school}</li>
                 </ul>
-            </div>`
+            </div>
+            `
         };
 
         for (i = 0; i < teamMembers.length; i++) {
@@ -365,21 +366,37 @@ function starterHtml (){
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
      <script src="https://kit.fontawesome.com/f78f1848e0.js" crossorigin="anonymous"></script>
      <title>Team Profile</title>
+
+    <style>
+        * {
+            font-family: 'Playfair Display', serif;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .hero-info {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    </style>
  </head>
  <body>
      <section class="hero">
-         <div class="container-fluid">
-             <div class="hero-title text-center mt-5 mb-5">
+         <div class="container-fluid hero-info">
+             <div class="hero-title text-center pt-5 pb-5 bg-dark text-white mb-5">
                  <h1>The Creative Team</h1>
                  <p>A look at the talent behind the designs</p>
              </div>
          </div>
      </section>
  
-     <div class="container-fluid">
+     <div class="container-fluid d-flex justify-content-center">
          <div class="row">
              <!-- START OF TEAM MEMBER CARDS-->
  
@@ -389,6 +406,9 @@ function starterHtml (){
              </div>
          </div>
      </div>
+
+     <footer class=" footer text-center bg-dark text-white">VP Visual Studios &#124; est. 2021 </footer>
+
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
  </body>
  </html>`
