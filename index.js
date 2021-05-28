@@ -294,12 +294,11 @@ const teamMembers = [];
                 <div class="card" style="width: 18rem;">
                     <div class="card-body bg-light text-dark">
                         <h5 class="card-title">${employee.name}</h5>
-                        <i class="fas fa-mug-hot"></i>
-                        <h6 class="card-text">Manager</h6>
+                        <h6 class="card-text"><i class="fas fa-mug-hot"></i>Manager</h6>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Employee ID: ${employee.id}</li>
-                        <li class="list-group-item">Email:<a href="mailto:${employee.email}">${employee.email}</a></li>
+                        <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                         <li class="list-group-item">Office: ${employee.officeNumber}</li>
                     </ul>
                 </div> 
@@ -313,12 +312,11 @@ const teamMembers = [];
                 <div class="card" style="width: 18rem;">
                     <div class="card-body bg-light text-dark">
                         <h5 class="card-title">${employee.name}</h5>
-                        <i class="fas fa-glasses"></i>
-                        <h6 class="card-text">Engineer</h6>
+                        <h6 class="card-text"><i class="fas fa-glasses"></i>Engineer</h6>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Employee ID: ${employee.id}</li>
-                        <li class="list-group-item">Email:<a href="mailto:${employee.email}">${employee.email}</a></li>
+                        <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                         <li class="list-group-item">GitHub: <a href="https://github.com/${employee.gitHub}">${employee.gitHub}</a></li>
                     </ul>
                 </div>
@@ -332,12 +330,11 @@ const teamMembers = [];
             <div class="card" style="width: 18rem;">
                 <div class="card-body bg-light text-dark">
                     <h5 class="card-title">${employee.name}</h5>
-                    <i class="fas fa-user-graduate"></i>
-                    <h6 class="card-text">Intern</h6>
+                    <h6 class="card-text"><i class="fas fa-user-graduate"></i>Intern</h6>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Employee ID: ${employee.id}</li>
-                    <li class="list-group-item">Email:<a href="mailto:${employee.email}">${employee.email}</a></li>
+                    <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
                     <li class="list-group-item">School: ${employee.school}</li>
                 </ul>
             </div>
