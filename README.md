@@ -27,7 +27,8 @@
   To generate a team profile, first run `npm install` the required dependencies as specified in package.json:
 
   `npm init`   
-  `npm install inquirer` 
+  `npm install inquirer`
+  `npm install --save-dev jest`
 
   The application can be invoked with node index.js.
 
