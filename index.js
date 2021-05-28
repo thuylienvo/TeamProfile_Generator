@@ -303,7 +303,8 @@ const teamMembers = [];
                         <li class="list-group-item">Office: ${employee.officeNumber}</li>
                     </ul>
                 </div> 
-            </div>`
+            </div>
+            `
         };
 
         function engrHtml(employee) {
@@ -321,11 +322,13 @@ const teamMembers = [];
                         <li class="list-group-item">GitHub: <a href="https://github.com/${employee.gitHub}">${employee.gitHub}</a></li>
                     </ul>
                 </div>
-            </div>`
+            </div>
+            `
         };
         
         function intHtml(employee) {
-            return `<div class="col-4">
+            return `<!-- Intern -->
+            <div class="col-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${employee.name}</h5>
