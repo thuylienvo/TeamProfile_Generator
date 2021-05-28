@@ -288,81 +288,56 @@ const teamMembers = [];
         const html = [];
 
         function mngrHtml(employee) {
-            return `<div class="container-fluid p-1">
-            <div class="col">
-                <div class="row" id="team-cards">
-                    <div class="card mb-3 mx-auto">
-    
-                        <div class="col-md-4 col-sm-6 col-lg-4 pt-4">
-                            <div class="card">
-                                <h5 class="card-title">
-                                    ${employee.name}
-                                </h5>
-                                <h6 class="card-text">Manager</h6>
-                            </div>
-                            
-                            <div class="card-body">
-                                <p class="info">Employee ID: ${employee.id}</p>
-                                <p class="info">Email Address: ${employee.email}</p>
-                                <p class="info">Office: ${employee.officeNumber}</p>
-                            </div>
-                        </div>
+            return `    
+            <!-- Manager -->
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">${employee.name}</h5>
+                        <i class="fas fa-mug-hot"></i>
+                        <h6 class="card-text">Manager</h6>
                     </div>
-                </div>
-            </div>
-        </div>`
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Employee ID: ${employee.id}</li>
+                        <li class="list-group-item">Email:<a href="mailto:${employee.email}">${employee.email}</a></li>
+                        <li class="list-group-item">Office: ${employee.officeNumber}</li>
+                    </ul>
+                </div> 
+            </div>`
         };
 
         function engrHtml(employee) {
-            return `<div class="container-fluid p-1">
-            <div class="col">
-                <div class="row" id="team-cards">
-                    <div class="card mb-3 mx-auto">
-    
-                        <div class="col-md-4 col-sm-6 col-lg-4 pt-4">
-                            <div class="card">
-                                <h5 class="card-title">
-                                    ${employee.name}
-                                </h5>
-                                <h6 class="card-text">Engineer</h6>
-                            </div>
-                            
-                            <div class="card-body">
-                                <p class="info">Employee ID: ${employee.id}</p>
-                                <p class="info">Email Address: ${employee.email}</p>
-                                <p class="info">GitHub ${employee.gitHub}</p>
-                            </div>
-                        </div>
+            return `<!-- Engineer -->
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">${employee.name}</h5>
+                        <i class="fas fa-glasses"></i>
+                        <h6 class="card-text">Engineer</h6>
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Employee ID: ${employee.id}</li>
+                        <li class="list-group-item">Email:<a href="mailto:${employee.email}">${employee.email}</a></li>
+                        <li class="list-group-item">GitHub: <a href="https://github.com/${employee.gitHub}">${employee.gitHub}</a></li>
+                    </ul>
                 </div>
-            </div>
-        </div>`
+            </div>`
         };
         
         function intHtml(employee) {
-            return `<div class="container-fluid p-1">
-            <div class="col">
-                <div class="row" id="team-cards">
-                    <div class="card mb-3 mx-auto">
-    
-                        <div class="col-md-4 col-sm-6 col-lg-4 pt-4">
-                            <div class="card">
-                                <h5 class="card-title">
-                                    ${employee.name}
-                                </h5>
-                                <h6 class="card-text">Intern</h6>
-                            </div>
-                            
-                            <div class="card-body">
-                                <p class="info">Employee ID: ${employee.id}</p>
-                                <p class="info">Email Address: ${employee.email}</p>
-                                <p class="info">School: ${employee.school}</p>
-                            </div>
-                        </div>
-                    </div>
+            return `<div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${employee.name}</h5>
+                    <i class="fas fa-user-graduate"></i>
+                    <h6 class="card-text">Intern</h6>
                 </div>
-            </div>
-        </div>`
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Employee ID: ${employee.id}</li>
+                    <li class="list-group-item">Email:<a href="mailto:${employee.email}">${employee.email}</a></li>
+                    <li class="list-group-item">School: ${employee.school}</li>
+                </ul>
+            </div>`
         };
 
         for (i = 0; i < teamMembers.length; i++) {
@@ -385,21 +360,32 @@ function starterHtml (){
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-     
-     <title>Team Profile Generator</title>
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+     <script src="https://kit.fontawesome.com/f78f1848e0.js" crossorigin="anonymous"></script>
+     <title>Team Profile</title>
  </head>
  <body>
-     <nav class="navbar navbar-dark bg-primary mb-5">
+     <section class="hero">
          <div class="container-fluid">
-             <span class="navbar-brand text-center w-100 h1 mt-6 fs-3 text">MVP Design Team</span>
+             <div class="hero-title text-center mt-5 mb-5">
+                 <h1>The Creative Team</h1>
+                 <p>A look at the talent behind the designs</p>
+             </div>
          </div>
-     </nav>
+     </section>
  
-     <!-- START Team information -->
-  
-     ${createHtml()}    
+     <div class="container-fluid">
+         <div class="row">
+             <!-- START OF TEAM MEMBER CARDS-->
  
+             ${createHtml()}
+             
+             <!-- END OF TEAM MEMBER CARDS-->
+             </div>
+         </div>
+     </div>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
  </body>
  </html>`
