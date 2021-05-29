@@ -35,9 +35,9 @@
   ## Usage 
   When you run `node index.js` in your terminal, the app uses the inquirer package to prompt the user with a series of questions about your team members. 
 
-  Once all the questions have been answered, the data is collected and your HTML file will be created with `fs.writeFile`.  
+  Once all the questions have been answered, the data is collected and your HTML file will be created.  
   
-  There you have it! A team prodile without the need to draw up an html outside of the command-line.
+  There you have it! A team profile without the need to draw up an html outside of the command-line.
 
   View a sample TEAM.html file generate with the application [here](https://github.com/thuylienvo/TeamProfile_Generator/blob/main/dist/team.html). 
 
