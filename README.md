@@ -38,6 +38,8 @@
   Once all the questions have been answered, the data is collected and your HTML file will be created.  
   
   There you have it! A team profile without the need to draw up an html outside of the command-line.
+  
+  ![htmlpreview](https://user-images.githubusercontent.com/79684575/120052745-5db0ff80-bfec-11eb-92fe-9ceff88109ad.png)
 
   View a sample TEAM.html file generate with the application [here](https://github.com/thuylienvo/TeamProfile_Generator/blob/main/dist/team.html). 
 
