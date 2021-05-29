@@ -12,9 +12,9 @@
 
   This is a command-line application that runs on `Node.js` and dynamically creates a professional team file from the data the user inputs. 
 
-  [teamprofile-demoGif](TBD)
+  ![teamprofile-demoGif](TBD)
 
-   See the full demonstation here: [TEAM PROFILE Full Video](TBD)
+   See the full demonstation here: [TEAM PROFILE Full Video](https://youtu.be/xQl8blAhm6k)
 
   ## Table of Contents
 
@@ -27,7 +27,7 @@
   To generate a team profile, first run `npm install` the required dependencies as specified in package.json:
 
   `npm init`   
-  `npm install inquirer`
+  `npm install inquirer`   
   `npm install --save-dev jest`
 
   The application can be invoked with node index.js.
@@ -39,7 +39,7 @@
   
   There you have it! A team prodile without the need to draw up an html outside of the command-line.
 
-  View a sample TEAMPROFILE.html file generate with the application [here](TBD). 
+  View a sample TEAMPROFILE.html file generate with the application [here](https://github.com/thuylienvo/TeamProfile_Generator/blob/main/dist/team.html). 
 
   ## License  
 
