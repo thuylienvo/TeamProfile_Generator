@@ -39,7 +39,7 @@
   
   There you have it! A team prodile without the need to draw up an html outside of the command-line.
 
-  View a sample TEAMPROFILE.html file generate with the application [here](https://github.com/thuylienvo/TeamProfile_Generator/blob/main/dist/team.html). 
+  View a sample TEAM.html file generate with the application [here](https://github.com/thuylienvo/TeamProfile_Generator/blob/main/dist/team.html). 
 
   ## License  
 
