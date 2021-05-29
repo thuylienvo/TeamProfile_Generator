@@ -12,7 +12,7 @@
 
   This is a command-line application that runs on `Node.js` and dynamically creates a professional team file from the data the user inputs. 
 
-  ![teamprofile-demoGif](TBD)
+  ![teamprofile-gif](https://user-images.githubusercontent.com/79684575/120052465-137b4e80-bfeb-11eb-82f6-327bcc21ff77.gif)
 
    See the full demonstation here: [TEAM PROFILE Full Video](https://youtu.be/xQl8blAhm6k)
 
